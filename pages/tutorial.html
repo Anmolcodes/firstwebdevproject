@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Preferences</title>
+    <style>
+        /* Styles for the select box and additional options */
+        .additional-options {
+            display: none; /* Hide additional options by default */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Accommodation Preference-select -->
+    <label for="pref">Accommodation Preferences</label>
+    <select id="pref" name="Accommodation" onchange="toggleHotelOptions()">
+        <option value="">Select an option</option>
+        <option value="Hotel">Hotels</option>
+        <option value="Villa">Villa</option>
+        <option value="Resort">Resort</option>
+        <option value="Guesthouse">Guesthouse</option>
+    </select>
+
+    <!-- Additional dropdown for hotel stars -->
+    <div id="hotel-options" class="additional-options">
+        <label for="hotel-stars">Hotel Stars</label>
+        <select id="hotel-stars" name="HotelStars">
+            <option value="3">3-star Hotel</option>
+            <option value="4">4-star Hotel</option>
+            <option value="5">5-star Hotel</option>
+        </select>
+    </div>
+
+    <script>
+        function toggleHotelOptions() {
+            const prefSelect = document.getElementById('pref');
+            const hotelOptions = document.getElementById('hotel-options');
+            if (prefSelect.value === 'Hotel') {
+                hotelOptions.style.display = 'block';
+            } else {
+                hotelOptions.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
